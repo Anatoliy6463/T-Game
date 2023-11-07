@@ -42,7 +42,8 @@ public class Experimental {
                         }
                         if (input == "p") {
                             if (money >= 10) money -= 10;
-                            if (money < 10) System.out.println("Попробуйте продать 
+                            if (money < 10) System.out.println("Попробуйте продать что-нибудь ");
+input = "f";
                         }
                         if (input.equals("p")) {
                             if (money >= 200) money -= 200;
