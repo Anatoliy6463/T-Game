@@ -52,18 +52,18 @@ public class Main {
                             input = "p";
                         }
                     }
-                    if (input == "p") {
+                    if (input == "s") {
                         System.out.println("Что вы хотите продать, персики, телефон или машину? \n чтобы продать машину, нажмите M, чтобы продать персик, нажмите P, а чтобы продать телефон нажмите S\\n нажмите F для выхода ");
                         input = sc.nextLine();
                         if (input == "m") {
                             money += 390;
                             input = "I";
                         }
-                        if (input == "m") {
+                        if (input == "p") {
                             money += 10;
                             input = "I";
                         }
-                        if (input == "m") {
+                        if (input == "s") {
                             money += 185;
                             input = "I";
                         }
@@ -71,7 +71,7 @@ public class Main {
                 }
                 if (posX % 100 == 0 || posY % 100 == 0 || posX % 100 == 0 && posY % 100 == 0) {
                     System.out.println("Вы нашли сокровища!");
-                    money += Math.random()%10000 + 10;
+                    money += 1000;
                 }
                 if (input == "q") {
                     System.out.println("Спасибо за игру!\n Автор: Анатолий6463");
