@@ -1,29 +1,28 @@
 import java.util.Scanner;
-import java.lang.Math;
-public class Experimental {
+public class Main {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         int posX = 0;
         int posY = 0;
         int money = 50;
-        String input = sc.nextLine();
+        String input = "\0";
         while (input != "q") {
-        if (input == "w") {
+        input = sc.nextLine();
+            if (input == "w") {
             posY++;
-        }
-        else if (input == "a") {
+            }
+            else if (input == "a") {
             posX--;
-        }
-        else if (input == "s") {
-            posY--;
-        }
-        else if (input == "d") {
-            posX++;
-        }
+            }
+            else if (input == "s") {
+                posY--;
+            }
+            else if (input == "d") {
+                posX++;
+            }
         else {
             System.out.println("Нажмите одну из следующих клавиш: W, A, S, D, Q");
         }
-        input = sc.nextLine();
                 System.out.println("Ваши координаты: x=" + posX + " y=" + posY + "Количество монет=" + money);
                 int persiki = 0;
                 if (posY % 7 == 0 || posX % 7 == 0 || posY % 7 == 0 && posX % 7 == 0) {
