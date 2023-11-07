@@ -3,22 +3,21 @@ import java.lang.Math;
 public class Main {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
-        String playerinput = sc.nextLine();
         int posX = 0;
         int posY = 0;
         int money = 50;
-        char input = playerinput;
-        while (input != 'q') {
-        if (input == 'w') {
+        String input = sc.nextLine();
+        while (input != "q") {
+        if (input == "w") {
             posY++;
         }
-        else if (input == 'a') {
+        else if (input == "a") {
             posX--;
         }
-        else if (input == 's') {
+        else if (input == "s") {
             posY--;
         }
-        else if (input == 'd') {
+        else if (input == "d") {
             posX++;
         }
         else {
@@ -31,48 +30,51 @@ public class Main {
                     persiki++;
                     System.out.println("Вы нашли персик! Ваше количество персиков: " + persiki);
                 }
-                if (posY == 43 && posX == 50 || posY ==  79 && posX == 11 && input == 'R') {
-                    input = 'R';
+                if (posY == 43 && posX == 50 || posY ==  79 && posX == 11 && input != "I") {
+                    input = "R";
                     System.out.println("Добро пожаловать на рынок! Что вы хотите купить/продать? \n Чтобы что-то купить нажмите B, а чтобы продать нажмите S\n Чтобы выйти, нажмите F");
-                    if (input == 'B' && input != 'I') {
+                    if (input == "B") {
                         System.out.println("Машина = 400 монет, персик: 10 монет, телефон: 200 монет\n чтобы купить машину, нажмите M, чтобы купить персик, нажмите P, а чтобы купить телефон нажмите S\n нажмите F для выхода");
                         input = sc.nextLine();
-                        if (input == 'm' && input != 'I') {
+                        if (input == "m") {
                             if (money >= 400) money -= 400;
                             if (money < 400) System.out.println("Попробуйте продать что-нибудь");
-                            input = 'I';
+                            input = "p";
                         }
-                        if (input == 'p' && input != 'I') {
+                        if (input == "p") {
                             if (money >= 10) money -= 10;
                             if (money < 10) System.out.println("Попробуйте продать что-нибудь");
-                            input = 'I';
+                            input = "p";
                         }
-                        if (input == 's' && input != 'I') {
+                        if (input == "p") {
                             if (money >= 200) money -= 200;
                             if (money < 200) System.out.println("Попробуйте продать что-нибудь");
-                            input = 'I';
+                            input = "p";
                         }
                     }
-                    if (input == 'S' && input != 'I') {
+                    if (input == "p") {
                         System.out.println("Что вы хотите продать, персики, телефон или машину? \n чтобы продать машину, нажмите M, чтобы продать персик, нажмите P, а чтобы продать телефон нажмите S\\n нажмите F для выхода ");
                         input = sc.nextLine();
-                        if (input == 'm' && input != 'I') {
+                        if (input == "m") {
                             money += 390;
-                            input = 'I';
+                            input = "I";
                         }
-                        if (input == 'p' && input != 'I') {
+                        if (input == "m") {
                             money += 10;
-                            input = 'I';
+                            input = "I";
                         }
-                        if (input == 's' && input != 'I') {
+                        if (input == "m") {
                             money += 185;
-                            input = 'I';
+                            input = "I";
                         }
                     }
                 }
                 if (posX % 100 == 0 || posY % 100 == 0 || posX % 100 == 0 && posY % 100 == 0) {
                     System.out.println("Вы нашли сокровища!");
                     money += Math.random()%10000 + 10;
+                }
+                if (input == "q") {
+                    System.out.println("Спасибо за игру!\n Автор: Анатолий6463");
                 }
         }
     }
