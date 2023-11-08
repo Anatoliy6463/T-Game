@@ -1,14 +1,8 @@
 import java.util.Scanner;
 public class Experimental {
-    public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        int posX = 0;
-        int posY = 0;
-        int money = 50;
-        String input = "\0";
-        while (input != "q") {
-        input = sc.nextLine();
-            if (input.equals("w")) {
+    public static void controller(String[] args) {
+        string input = "\0";
+        if (input.equals("w")) {
             posY++;
             }
             else if (input.equals("a")) {
@@ -20,61 +14,86 @@ public class Experimental {
             else if (input.equals("d")) {
                 posX++;
             }
-        else {
-            System.out.println("Нажмите одну из следующих клавиш: W, A, S, D, Q");
-        }
+    }
+    public static void teleportator(int X, int Y){
+        System.out.println("ВВЕДИТЕ КООРИНАТЫ ТЕЛЕПОРТАЦИИ");
+    }
+    public static void main(String[] args){
+        Scanner sc = new Scanner(System.in);
+        int posX = 0;
+        int posY = 0;
+        int HP = 100;
+        int armor = 0;
+        int strength = 4.5;
+        int money = 50;
+        int persiki = 0;
+        while (input != "q") {
+        input = sc.nextLine();
+            if (input.equals("w")) {
+                controller();
+            }
+            else if (input.equals("a")) {
+                controller();
+            }
+            else if (input.equals("s")) {
+                controller();
+            }
+            else if (input.equals("d")) {
+                controller();
+            }
+            else {
+                System.out.println("Нажмите одну из следующих клавиш: W, A, S, D, Q");
+            }
                 System.out.println("Ваши координаты: x=" + posX + " y=" + posY + "Количество монет=" + money);
-                int persiki = 0;
+                
                 if (posY % 7 == 0 || posX % 7 == 0 || posY % 7 == 0 && posX % 7 == 0) {
                     persiki++;
                     System.out.println("Вы нашли персик! Ваше количество персиков: " + persiki);
                 }
-                if (posY == 43 && posX == 50 || posY ==  79 && posX == 11 && !input.equals("i")) {
-                    input = "R";
-                    System.out.println("Добро пожаловать на рынок! Что вы хотите купить/продать? \n Чтобы что-то купить нажмите B, а чтобы продать нажмите S\n Чтобы выйти, нажмите i");
-                    if (input.equals("b") && !input.equals("f") {
-                        System.out.println("Машина = 400 монет, персик: 10 монет, телефон: 200 монет\n чтобы купить машину, нажмите M, чтобы купить персик, нажмите P, а чтобы купить телефон нажмите S\n нажмите F для выхода");
+
+                    if (posX >=50 && posY >=10 && pos X <= 51 && posY <= 11) {
+                        System.out.println("Что вы хотите купить, меч или броню? Чтобы купить меч, нажмите M, а чтобы купить броню нажмите A");
                         input = sc.nextLine();
+                        if (input.equals("a")) {
+                            money-=25;
+                            armor = 1;
+                        }
                         if (input.equals("m")) {
-                            if (money >= 400) money -= 400;
-                            if (money < 400) System.out.println("Попробуйте продать что-нибудь");
-                            input = "f";
-                        }
-                        if (input == "p") {
-                            if (money >= 10) money -= 10;
-                            if (money < 10) System.out.println("Попробуйте продать что-нибудь ");
-input = "f";
-                        }
-                        if (input.equals("p")) {
-                            if (money >= 200) money -= 200;
-                            if (money < 200) System.out.println("Попробуйте продать что-нибудь");
-                            input = "f";
+                            money-=25;
+                            strength+=10;
                         }
                     }
-                    if (input == "s") {
-                        System.out.println("Что вы хотите продать, персики, телефон или машину? \n чтобы продать машину, нажмите M, чтобы продать персик, нажмите P, а чтобы продать телефон нажмите S\\n нажмите F для выхода ");
-                        input = sc.nextLine();
-                        if (input == "m") {
-                            money += 390;
-                            input = "I";
+                
+                if(posX >= 58 && posY >= 50 && posX <=69 && posY <=69){
+                    System.out.println("Вы зашли на территорию дракона! Бегите или сражайтесь!");
+                    input = "dragon";
+                    input = sc.nextLine();
+                    int dragonhp = 1000;
+                    int dragonstrength = 20;
+                    if (!input.equals("\0") && !input.equals("a"){
+                        controller();
+                        if (armor = 0) hp-=20;
+                        if (armor = 1) {
+                            hp-=20;
+                            hp+=strength;
                         }
-                        if (input == "p") {
-                            money += 10;
-                            input = "I";
-                        }
-                        if (input == "s") {
-                            money += 185;
-                            input = "I";
+                    
+                    if (input.equals("a")) {
+                        dragonhp-=strength;
+                    }
+                    System.out.println("Здоровье дракона:" + dragonhp + ". Ваше здоровье:");
+                        if (dragonhp <= 0) {
+                            System.out.println("Вы победили дракона!");
+                            money+=50;
+                            hp+=75;
+                            if (hp >= 100) hp = 100;
                         }
                     }
-                }
-                if (posX % 100 == 0 || posY % 100 == 0 || posX % 100 == 0 && posY % 100 == 0) {
-                    System.out.println("Вы нашли сокровища!");
-                    money += 1000;
                 }
                 if (input == "q") {
                     System.out.println("Спасибо за игру!\n Автор: Анатолий6463");
                 }
+        }
         }
     }
 }
