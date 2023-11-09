@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Experimental {
+public class Debug {
     public static void main(String[] args) {
         System.out.println("T-Game 0.0.1");
         System.out.println("Загрузка...");
