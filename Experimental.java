@@ -38,7 +38,8 @@ public class Experimental {
             posX++;
         }
         else if (input.equalsIgnoreCase("e") && persiki >= 1) {
-            if (hunger <= 20) hunger = 0;
+            if (hunger <= 5) hunger = 0;
+            else hunger -= 5;
         }
         else if (input.equalsIgnoreCase("e") && persiki < 1) {
             hunger+=0.25;
@@ -48,6 +49,7 @@ public class Experimental {
         }
         else if (input.equalsIgnoreCase("p") && persiki < 1) {
             System.out.println("У вас нет персиков, попробуйте найти их или купить в магазине");
+            hunger+=0.15;
         }
         else {
             System.out.println("Нажмите одну из следующих клавиш: W, A, S, D, Q");
