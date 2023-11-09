@@ -1,14 +1,15 @@
 import java.util.Scanner;
-public class Experimental {
+public class Main {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         int posX = 0;
         int posY = 0;
         int money = 50;
         int flag = 0;
+        System.out.println("Добро пожаловать в T-Game!");
         String input = sc.nextLine();
         while (input != "q") {
-        if (input == "w") {
+        if (input.equals("w")) {
             posY++;
         }
         else if (input.equals("a")) {
@@ -39,6 +40,8 @@ public class Experimental {
                 }
                 if (input == "q") {
                     System.out.println("Спасибо за игру!\n Автор: Анатолий6463");
+                    sc.close(); 
+                    break;
                 }
         }
     }
