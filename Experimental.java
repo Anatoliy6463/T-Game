@@ -23,7 +23,7 @@ public class Experimental {
         String input = "\0";
         while (!input.equals("q")) {
         input = sc.nextLine();
-        System.out.println("Ваши координаты: x=" + posX + " y=" + posY + "\nКоличество монет=" + money + " Уровень голода=" + hunger + " HP=" + HP);
+        System.out.println("Ваши координаты: x=" + posX + " y=" + posY + "\nКоличество монет=" + money + " Уровень голода=" + hunger + " HP=" + hp);
 
         if (input.equalsIgnoreCase("w")) {
             posY++;
