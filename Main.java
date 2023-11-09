@@ -30,11 +30,11 @@ public class Main {
                     persiki++;
                     System.out.println("Вы нашли персик! Ваше количество персиков: " + persiki);
                 }
-                if (posX % 100 == 0 && posY % 100 == 0 && posX != 0 %% posY != 0 && flag == 0) {
+                if (posX % 100 == 0 && posY % 100 == 0 && posX != 0 && posY != 0 && flag == 0) {
                     System.out.println("Вы нашли сокровища!");
                     money += 1000;
                 }
-                    if (posX % 100 == 0 && posY % 100 == 0 && posX != 0 %% posY != 0 && flag == 1) {
+                    if (posX % 100 == 0 && posY % 100 == 0 && posX != 0 && posY != 0 && flag == 1) {
                     System.out.println("Здесь уже нет сокровищ");
                 }
                 if (input == "q") {
