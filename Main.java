@@ -7,8 +7,9 @@ public class Main {
         int money = 50;
         int flag = 0;
         String input = sc.nextLine();
+        System.out.println("Добро пожаловать в T-Game!");
         while (input != "q") {
-        if (input == "w") {
+        if (input.equals("w")) {
             posY++;
         }
         else if (input.equals("a")) {
@@ -39,6 +40,8 @@ public class Main {
                 }
                 if (input == "q") {
                     System.out.println("Спасибо за игру!\n Автор: Анатолий6463");
+                    sc.close(); 
+                    break;
                 }
         }
     }
