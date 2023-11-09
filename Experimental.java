@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class Main {
+public class Experimental {
     public static void main(String[] args){
         Scanner sc = new Scanner(System.in);
         int posX = 0;
@@ -38,7 +38,7 @@ public class Main {
                     if (posX % 100 == 0 && posY % 100 == 0 && posX != 0 && posY != 0 && flag == 1) {
                     System.out.println("Здесь уже нет сокровищ");
                 }
-                if (input == "q") {
+                if (input.equals("q")) {
                     System.out.println("Спасибо за игру!\n Автор: Анатолий6463");
                     sc.close(); 
                     break;
