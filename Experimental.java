@@ -1,18 +1,14 @@
 import java.util.Scanner;
-import java.lang.Thread;
 public class Experimental {
     public static void main(String[] args) {
         System.out.println("T-Game 0.0.1");
         System.out.println("Загрузка...");
-        for (int i = 0; i < 100; i++) {
-            System.out.println(i + '%');
-        }
         engine();
     }
     public static void engine(){
         Scanner sc = new Scanner(System.in);
-        double posX = 0;
-        double posY = 0;
+        double posX = 1;
+        double posY = 1;
         int money = 50;
         int shopmoney = 0;
         int flag = 0;
@@ -24,9 +20,11 @@ public class Experimental {
         int counter = 0;
         char magazin = 'r';
         double hunger = 0;
-        System.out.println("Добро пожаловать в T-Game!");
-        String input = sc.nextLine();
-        while (input != "q") {
+        String input = "\0";
+        while (!input.equals("q")) {
+        input = sc.nextLine();
+        System.out.println("Ваши координаты: x=" + posX + " y=" + posY + "\nКоличество монет=" + money + " Уровень голода=" + hunger + " HP=" + HP);
+
         if (input.equalsIgnoreCase("w")) {
             posY++;
         }
@@ -54,9 +52,9 @@ public class Experimental {
         else {
             System.out.println("Нажмите одну из следующих клавиш: W, A, S, D, Q");
         }
-        input = sc.nextLine();
-                System.out.println("Ваши координаты: x=" + posX + " y=" + posY + "\nКоличество монет=" + money + " Уровень голода=" + hunger);
-                if (posY % 7 == 0 || posX % 7 == 0 || posY % 7 == 0 && posX % 7 == 0) {
+        
+                
+                if (posX % 7 == 0 && posY % 7 == 0 && posX != 0 && posY != 0) {
                     persiki = persiki + 1;
                     System.out.println("Вы нашли персик! Ваше количество персиков: " + persiki);
                 }
