@@ -6,8 +6,8 @@ public class Main {
         int posY = 0;
         int money = 50;
         int flag = 0;
-        String input = sc.nextLine();
         System.out.println("Добро пожаловать в T-Game!");
+        String input = sc.nextLine();
         while (input != "q") {
         if (input.equals("w")) {
             posY++;
